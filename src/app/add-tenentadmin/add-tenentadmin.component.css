@@ -1,0 +1,30 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+  /*max-height: 500px;*/
+  /*min-width: 100px;*/
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
+/*.mat-header-cell.mat-sort-header-sorted {
+    color: white;
+}*/
+.mat-header-row{
+    background-color:#778899;
+    min-height: 30px;
+
+}
+.mat-header-cell{
+  color: white;
+}
+
+.main_div{
+  margin-top: 50px;
+}
+
+.mat-fab:not([class*=mat-elevation-z]) {
+background-color: white;
+}

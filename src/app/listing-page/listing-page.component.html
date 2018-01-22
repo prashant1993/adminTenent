@@ -1,0 +1,48 @@
+
+<div class="main_div"><div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="position" >
+      <mat-header-cell *matHeaderCellDef>No.</mat-header-cell>
+      <mat-cell *matCellDef="let element; let i = index"  (click)="setClickedRow(i)" [class.active]="i == selectedRow" >
+        <button (click)="toggle(i)"> {{buttonName}}</button>
+      </mat-cell>
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="name" >
+      <mat-header-cell *matHeaderCellDef> New Value </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <p>username: {{element.name}}</p>
+        <div class="" *ngIf="show">
+        <p>email:{{element.name}}</p>
+        <p>mobile:{{element.name}}</p>
+        </div>
+          <a href="#">APPROVE</a>
+      </mat-cell>
+
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="weight">
+      <mat-header-cell *matHeaderCellDef> Old Value </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <div class="">
+        <p>username: {{element.name}}</p>
+        <p>email:{{element.name}}</p>
+        <p>mobile:{{element.name}}</p>
+        </div>
+
+      </mat-cell>
+    </ng-container>
+
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
+</div>

@@ -1,0 +1,65 @@
+
+<div class="main_div">
+<div class="example-container mat-elevation-z8" >
+  <mat-table #table [dataSource]="dataSource" matSort *ngFor="let field of fieldArray; let i = index">
+
+    <ng-container matColumnDef="email"  >
+      <mat-header-cell *matHeaderCellDef mat-sort-header  >Email Adrress </mat-header-cell>
+      <mat-cell *matCellDef="let element" >
+        <mat-form-field>
+    <input matInput placeholder="Email"  [formControl]="mobile" id="newAttributeemail" [(ngModel)]="newAttribute.email" name="newAttributeemail">
+  </mat-form-field>
+       </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef mat-sort-header  >Full Name </mat-header-cell>
+      <mat-cell *matCellDef="let element" >
+        <mat-form-field>
+    <input matInput placeholder="name" [formControl]="email" id="newAttributename" [(ngModel)]="newAttribute.name" name="newAttributename">
+  </mat-form-field>
+      </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="mobile">
+      <mat-header-cell *matHeaderCellDef mat-sort-header  > Mobile Number </mat-header-cell>
+      <mat-cell *matCellDef="let element" >
+        <mat-form-field>
+    <input matInput placeholder="mobile"  [formControl]="mobile" id="newAttributemobile" [(ngModel)]="newAttribute.mobile" name="newAttributemobile">
+  </mat-form-field>
+       </mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="role">
+      <mat-header-cell *matHeaderCellDef mat-sort-header > Role </mat-header-cell>
+      <mat-cell *matCellDef="let element">
+        <mat-form-field>
+          <mat-select placeholder="Select" id="newAttributeSelect" [(ngModel)]="newAttribute.Select" name="newAttributeSelect">
+            <mat-option value="option">Option</mat-option>
+            <mat-option value="option">Option</mat-option>
+            <mat-option value="option">Option</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+</div>
+</div>
+
+
+<div class="container"
+     fxLayout
+     fxLayout.xs="row"
+     fxLayoutAlign="center"
+     fxLayoutGap="10px"
+     fxLayoutGap.xs="5px">
+  <div class="item item-1" fxFlex="40%"  fxFlex.xs="25%"></div>
+  <div class="item item-2" fxFlex="40%" fxFlex.xs="25%" ></div>
+  <div class="item item-3" fxFlex>
+    <button mat-raised-button color="primary"  fxLayoutGap.xs="5px">SAVE</button>
+     <button mat-fab fxLayoutGap.xs="5px"  (click)="addFieldValue()">+</button>
+  </div>
+</div>
